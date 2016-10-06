@@ -7,8 +7,4 @@ angular.module('myApp.testController', ['firebase'])
   // download the data into a local object
   $scope.data = $firebaseObject(ref);
 
-  $scope.checkshit = function(){
-  	console.log($scope.data['posts']);
-  };
-
 });
