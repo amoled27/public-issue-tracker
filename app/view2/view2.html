@@ -1,0 +1,66 @@
+<div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <a href="index.html">Home</a>
+                                <i class="fa fa-circle"></i>
+                            </li>
+                            <li>
+                                <span>All Issues</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END PAGE BAR -->
+                    <!-- BEGIN PAGE TITLE-->
+                    <h3 class="page-title">All Issues
+                        <small>List of all Issues</small>
+                    </h3>
+                    <!-- END PAGE TITLE-->
+                    <!-- END PAGE HEADER-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN SAMPLE TABLE PORTLET-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-social-dribbble font-green"></i>
+                                        <span class="caption-subject font-green bold uppercase">All Posts</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body" ng-controller="testController">
+                                    <div class="table-scrollable">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th> # </th>
+                                                    <th> Title </th>
+                                                    <th> Category </th>
+                                                    <th> Author </th>
+                                                    <th> Status </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="data in data['posts']">
+                                                    <td> {{$index + 1}} </td>
+                                                    <td> {{data['title']}} </td>
+                                                    <td> {{data['category']}} </td>
+                                                    <td> {{data['author']}} </td>
+                                                    <td>
+                                                        <span class="label label-sm" ng-class='{ "label-danger": data["status"]==="open","label-success": data["status"]==="closed", "label-warning": data["status"]==="pending"}'> {{data['status']}} </span>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END SAMPLE TABLE PORTLET-->
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
